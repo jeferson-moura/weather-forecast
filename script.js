@@ -8,9 +8,6 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
         clearInfo();
         Warning('carregando...')
 
-
-
-
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=c2a65cdda4ed298af4db6cd2cce9f9f3&units=metric&lang=pt_br`
 
         let results = await fetch(url);
@@ -39,11 +36,8 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
 });
 
 
-
 function showInfo(json) {
     Warning('');
-
-
 
     document.querySelector('.titulo').innerHTML = `${json.name},${json.country}`;
     document.querySelector('.tempInfo').innerHTML = `${json.temp}<sup>ºC</sup>`;
@@ -59,7 +53,6 @@ function showInfo(json) {
 
     document.querySelector('.resultado').style.display = 'block'
 }
-
 
 function clearInfo() {
     Warning('');
